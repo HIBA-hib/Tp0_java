@@ -1,1 +1,66 @@
+package TP5;
+
+public abstract  class Abonnement {
+	private String nom;
+	private double prixBase;
+	private int nbProfils;
+	
+	public Abonnement (String nom, double prixBase,int nbProfils){
+		this.nom=nom;
+		if (prixBase <= 0) {
+			
+			this.prixBase=5;
+		}else {
+			this.prixBase=prixBase;
+		}
+		if (nbProfils <= 0) {
+			
+			this.nbProfils=1;
+		}else {
+			this.nbProfils=nbProfils;
+		}
+			
+		
+	}
+	public String getNom () {
+		return nom;	
+	}
+	public double getPrixBase () {
+		return prixBase ;	
+	}
+	public double getnbProfils () {
+		return nbProfils  ;	
+		
+	}
+	public void setNom (String Nom) {
+		this. nom= Nom;
+	}
+	public void setprixBase ( double prixBase) {
+		this.prixBase=prixBase;
+	}
+	public void setNbProfils (  int nbProfils) {
+		this. nbProfils= nbProfils;
+	}
+	public boolean estPartageFamilial() {
+		if (nbProfils>=3) {
+			return true;
+		}else {
+			
+			return false;
+		}
+	}
+	public void afficherInfos() {
+		System.out.println("le nom:"+nom+",prix base:"+ prixBase+"nombre de Profil"+nbProfils+"Le partage familiale"+estPartageFamilial());
+	}
+	public abstract  double  CalculerCoutMensuel();
+	public abstract  int CalculerScoreSatisfaction();
+	
+	
+	
+	
+	
+	
+	
+
+}
 
